@@ -1,0 +1,976 @@
+/* ===================================
+   リセット
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:#333;
+    background:#fafafa;
+    line-height:1.9;
+    overflow-x:hidden;
+}
+
+
+/* ===================================
+   共通
+=================================== */
+
+img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:18px;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:110px 0;
+}
+
+.gray{
+    padding:110px 0;
+    background:#f3f5f8;
+}
+
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    background-color:#f5f5f5;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.35),
+            rgba(255,255,255,.35)
+        ),
+        url("-snc7p7.jpg");
+
+    background-repeat:no-repeat;
+
+    background-position:center center;
+
+    background-size:contain;
+
+    padding:60px 20px;
+
+}
+
+.hero-overlay{
+
+    background:rgba(255,255,255,.88);
+
+    padding:65px 70px;
+
+    border-radius:30px;
+
+    max-width:900px;
+
+    width:100%;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    width:min(320px,70%);
+
+    margin:0 auto 35px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(2rem,5vw,3.5rem);
+
+    line-height:1.5;
+
+    margin-bottom:25px;
+
+    font-weight:900;
+
+}
+
+.catch{
+
+    font-size:clamp(1rem,2vw,1.3rem);
+
+    letter-spacing:4px;
+
+    font-weight:500;
+
+    color:#111a67;
+
+}
+
+
+/* ===================================
+   ハンバーガーメニュー
+   ※ここは元のまま
+=================================== */
+
+#menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    width: 100%;
+
+    background: rgb(12, 12, 12);
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.slide-menu {
+
+    position: fixed;
+
+    top: 0;
+    right: -320px;
+
+    width: 300px;
+    height: 100vh;
+
+    background: navy;
+
+    transition: 0.4s ease;
+
+    z-index: 1000;
+
+    padding-top: 100px;
+
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+
+}
+
+.slide-menu ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+}
+
+.slide-menu li {
+
+    border-bottom: 1px solid rgba(243, 236, 236, 0.971);
+
+}
+
+.slide-menu a {
+
+    display: block;
+
+    padding: 22px 30px;
+
+    color: rgb(255, 253, 253);
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.slide-menu a:hover {
+
+    background: rgba(255, 255, 255, 0.968);
+
+    padding-left: 40px;
+
+}
+
+#menu-toggle:checked ~ .slide-menu {
+
+    right: 0;
+
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+
+    transform: rotate(45deg) translateY(12px);
+
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+
+    transform: rotate(-45deg) translateY(-12px);
+
+}
+
+
+/* ===================================
+   2カラムレイアウト
+=================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:80px;
+
+    align-items:center;
+
+}
+
+.reverse{
+
+    direction:rtl;
+
+}
+
+.reverse>*{
+
+    direction:ltr;
+
+}
+
+.text{
+
+    width:100%;
+
+}
+
+.image{
+
+    width:100%;
+
+}
+
+
+/* ===================================
+   画像
+=================================== */
+
+.image{
+
+    position:relative;
+
+}
+
+.image img{
+
+    aspect-ratio:4/3;
+
+    object-fit:cover;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.image img:hover{
+
+    transform:scale(1.025);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.2);
+
+}
+
+
+/* ===================================
+   見出し
+=================================== */
+
+h2{
+
+    color:#c1121f;
+
+    font-size:clamp(1.8rem,4vw,2.4rem);
+
+    margin-bottom:30px;
+
+    line-height:1.5;
+
+    font-weight:900;
+
+}
+
+p{
+
+    margin-bottom:22px;
+
+}
+
+
+/* ===================================
+   強調文字
+=================================== */
+
+.highlight{
+
+    color:#c1121f;
+
+    font-weight:700;
+
+    font-size:1.08rem;
+
+    background:#fff4f4;
+
+    border-left:5px solid #c1121f;
+
+    padding:18px 22px;
+
+    margin:30px 0;
+
+    border-radius:0 12px 12px 0;
+
+}
+
+.accent{
+
+    color:#c1121f;
+
+    font-weight:700;
+
+}
+
+
+/* ===================================
+   リスト
+=================================== */
+
+ul{
+
+    margin:
+        25px 0
+        30px
+        25px;
+
+}
+
+li{
+
+    margin-bottom:12px;
+
+}
+
+.skill-list{
+
+    list-style:none;
+
+    margin-left:0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+
+}
+
+.skill-list li{
+
+    font-weight:600;
+
+    background:#ffffff;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.07);
+
+    border-left:4px solid #c1121f;
+
+}
+
+
+/* ===================================
+   AI時代セクション
+=================================== */
+
+.ai-section{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #10184d,
+            #161f68
+        );
+
+    padding:120px 20px;
+
+    color:#fff;
+
+    position:relative;
+
+}
+
+.ai-container{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.ai-container h2{
+
+    color:#ffffff;
+
+    font-size:clamp(1.8rem,4vw,2.6rem);
+
+    margin-bottom:40px;
+
+    line-height:1.5;
+
+}
+
+.ai-container p{
+
+    margin-bottom:25px;
+
+    font-size:1.05rem;
+
+    line-height:2.1;
+
+}
+
+.ai-container .accent{
+
+    color:#ff5a5f;
+
+}
+
+.ai-container .highlight{
+
+    color:#c1121f;
+
+    background:#ffffff;
+
+    border-left:5px solid #c1121f;
+
+    font-weight:700;
+
+    font-size:1.2rem;
+
+    padding:22px 25px;
+
+    margin-top:40px;
+
+}
+
+
+/* ===================================
+   子どもの頃の体験
+=================================== */
+
+.future-section{
+
+    padding:120px 20px;
+
+    background:#fafafa;
+
+}
+
+.future-container{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.future-container h2{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.future-container > p{
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+}
+
+
+/* ===================================
+   Message
+=================================== */
+
+.message{
+
+    padding:120px 20px;
+
+    background:#ffffff;
+
+    text-align:center;
+
+}
+
+.message .container{
+
+    max-width:900px;
+
+}
+
+.message h2{
+
+    margin-bottom:35px;
+
+}
+
+.message h3{
+
+    color:#c1121f;
+
+    font-size:clamp(1.7rem,4vw,2.5rem);
+
+    line-height:1.9;
+
+    margin:45px 0;
+
+    padding:35px 20px;
+
+    background:#fff7f7;
+
+    border-radius:20px;
+
+}
+
+.message p{
+
+    max-width:800px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.message .highlight{
+
+    text-align:center;
+
+    border-left:none;
+
+    border-top:5px solid #c1121f;
+
+    border-radius:12px;
+
+    padding:25px;
+
+    margin-top:40px;
+
+}
+
+
+/* ===================================
+   お申し込みボタン
+=================================== */
+
+.apply-button-area{
+
+    text-align:center;
+
+    margin:70px 0 20px;
+
+}
+
+.apply-button{
+
+    display:inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111a67,
+            #1b2172
+        );
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    padding:20px 65px;
+
+    border-radius:50px;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(17,26,103,.3);
+
+}
+
+.apply-button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(17,26,103,.4);
+
+}
+
+.apply-button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ===================================
+   フッター
+=================================== */
+
+footer{
+
+    background:rgb(13, 13, 86);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.footer-logo{
+
+    width:180px;
+
+    margin:0 auto 20px;
+
+    background:#fff;
+
+    padding:12px;
+
+    border-radius:12px;
+
+}
+
+
+/* ===================================
+   タブレット
+=================================== */
+
+@media(max-width:900px){
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .reverse{
+
+        direction:ltr;
+
+    }
+
+    .section{
+
+        padding:80px 0;
+
+    }
+
+    .gray{
+
+        padding:80px 0;
+
+    }
+
+    .hero{
+
+        min-height:85vh;
+
+    }
+
+    .hero-overlay{
+
+        padding:45px 30px;
+
+    }
+
+    .ai-section{
+
+        padding:90px 20px;
+
+    }
+
+    .future-section{
+
+        padding:90px 20px;
+
+    }
+
+    .message{
+
+        padding:90px 20px;
+
+    }
+
+}
+
+
+/* ===================================
+   スマホ
+=================================== */
+
+@media(max-width:600px){
+
+    body{
+
+        font-size:15px;
+
+    }
+
+    .hero{
+
+        padding:20px;
+
+        min-height:90vh;
+
+    }
+
+    .hero-overlay{
+
+        padding:35px 20px;
+
+        border-radius:22px;
+
+    }
+
+    .logo{
+
+        width:180px;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .catch{
+
+        letter-spacing:2px;
+
+    }
+
+    h2{
+
+        text-align:center;
+
+        font-size:1.8rem;
+
+    }
+
+    p{
+
+        text-align:left;
+
+    }
+
+    .section{
+
+        padding:70px 0;
+
+    }
+
+    .gray{
+
+        padding:70px 0;
+
+    }
+
+    .grid{
+
+        gap:35px;
+
+    }
+
+    .image img{
+
+        aspect-ratio:16/10;
+
+    }
+
+    .highlight{
+
+        font-size:1rem;
+
+        padding:15px 18px;
+
+    }
+
+    .skill-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .ai-section{
+
+        padding:80px 20px;
+
+    }
+
+    .ai-container p{
+
+        text-align:left;
+
+    }
+
+    .ai-container h2{
+
+        text-align:center;
+
+    }
+
+    .future-section{
+
+        padding:80px 20px;
+
+    }
+
+    .future-container > p{
+
+        text-align:left;
+
+    }
+
+    .message{
+
+        padding:80px 15px;
+
+    }
+
+    .message h3{
+
+        line-height:1.7;
+
+        padding:25px 15px;
+
+        font-size:1.7rem;
+
+    }
+
+    .message .highlight{
+
+        text-align:center;
+
+    }
+
+    .apply-button{
+
+        font-size:18px;
+
+        padding:17px 40px;
+
+    }
+
+}
+
+
+/* ===================================
+   大画面
+=================================== */
+
+@media(min-width:1400px){
+
+    .container{
+
+        width:min(1280px,90%);
+
+    }
+
+    .hero-overlay{
+
+        max-width:980px;
+
+    }
+
+    .grid{
+
+        gap:100px;
+
+    }
+
+}
+

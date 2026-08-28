@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>教材について | EDU-BOTIX</title>
+
+    <!-- CSSファイル -->
+    <link rel="stylesheet" href="EDU-BOTIX-2.css">
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- ==========================
+         ハンバーガーメニュー
+    ========================== -->
+
+    <header class="header">
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="hamburger">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+        <nav class="slide-menu">
+
+            <ul>
+
+                <li>
+                    <a href="EDU-BOTIX-1.html">
+                        ホーム
+                    </a>
+                </li>
+
+                <li>
+                    <a href="EDU-BOTIX-3.html">
+                        教材について
+                    </a>
+                </li>
+
+                <li>
+                    <a href="apply.html">
+                        ご購入はこちら
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        ログイン
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+
+    <!-- ==========================
+         1. Hero
+    ========================== -->
+
+    <header class="bg-white py-20 text-center px-4 shadow-sm">
+
+        <h1 class="text-4xl md:text-5xl font-black mb-6">
+
+            ただのおもちゃじゃない。<br>
+
+            <span class="gradient-text">
+                本物の工学
+            </span>
+
+            を、リビングで。
+
+        </h1>
+
+
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+
+            現役阪大生が開発。暗記ではなく「試行錯誤する力」を育む、<br
+                class="hidden md:block">
+
+            次世代の電子工作・プログラミング教材です。
+
+        </p>
+
+
+        <a href="#buy"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:-translate-y-1">
+
+            第1期ベータ版を申し込む
+
+        </a>
+
+    </header>
+
+
+    <!-- ==========================
+         2. 親の悩み
+    ========================== -->
+
+    <section class="py-16 bg-blue-50 px-4">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-blue-900">
+
+                こんなお悩み、ありませんか？
+
+            </h2>
+
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+
+                    <p class="font-bold text-gray-700">
+
+                        「プログラミング教室に通わせているけど、
+                        ゲームで遊んでいるだけに見える…」
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+
+                    <p class="font-bold text-gray-700">
+
+                        「子供がすぐに飽きてしまい、
+                        おもちゃが押し入れの肥やしになっている」
+
+                    </p>
+
+                </div>
+
+
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+
+                    <p class="font-bold text-gray-700">
+
+                        「親である私に知識がないので、
+                        家で教えてあげられない」
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p class="mt-8 text-xl font-bold text-blue-600">
+
+                EDU-BOTIXの教材システムが、
+                すべて解決します。
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         3. 教材の特徴
+    ========================== -->
+
+    <section id="about" class="py-20 px-4 max-w-5xl mx-auto">
+
+        <h2 class="text-3xl font-bold text-center mb-16">
+
+            EDU-BOTIX 教材の3つの特徴
+
+        </h2>
+
+
+        <!-- FEATURE 01 -->
+
+        <div class="flex flex-col md:flex-row items-center mb-16 gap-8">
+
+            <div class="md:w-1/2">
+
+                <div
+                    class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center text-gray-400 font-bold text-xl">
+
+                    (子供が真剣にキットを組む写真)
+
+                </div>
+
+            </div>
+
+
+            <div class="md:w-1/2">
+
+                <span class="text-blue-600 font-bold tracking-wider text-sm">
+
+                    FEATURE 01
+
+                </span>
+
+
+                <h3 class="text-2xl font-bold mt-2 mb-4">
+
+                    「正解のない問題」に挑む力がつく
+
+                </h3>
+
+
+                <p class="text-gray-600 leading-relaxed">
+
+                    本教材では、自動運転などにも使われる本格的な「PID制御」の概念を体験します。
+                    難しい数式は使いません。
+                    センサーの数値を自分で調整し、
+                    「どうすればロボットがまっすぐ走るか」を試行錯誤する過程で、
+                    これからの時代に必須の論理的思考力が自然に身につきます。
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURE 02 -->
+
+        <div class="flex flex-col md:flex-row-reverse items-center mb-16 gap-8">
+
+            <div class="md:w-1/2">
+
+                <div
+                    class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center text-gray-400 font-bold text-xl">
+
+                    (分かりやすい動画画面のモック)
+
+                </div>
+
+            </div>
+
+
+            <div class="md:w-1/2">
+
+                <span class="text-blue-600 font-bold tracking-wider text-sm">
+
+                    FEATURE 02
+
+                </span>
+
+
+                <h3 class="text-2xl font-bold mt-2 mb-4">
+
+                    親のサポート不要。
+                    動画で自分のペースで進める
+
+                </h3>
+
+
+                <p class="text-gray-600 leading-relaxed">
+
+                    文字だけの説明書で挫折した経験はありませんか？
+                    すべてのステップに、
+                    現役大学生が丁寧に解説した動画教材が付属します。
+                    子供一人で直感的に理解でき、
+                    何度でも見返せるため、
+                    「分からないからやめた」を防ぎます。
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURE 03 -->
+
+        <div class="flex flex-col md:flex-row items-center gap-8">
+
+            <div class="md:w-1/2">
+
+                <div
+                    class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center text-gray-400 font-bold text-xl">
+
+                    (LINEで優しく回答している画面)
+
+                </div>
+
+            </div>
+
+
+            <div class="md:w-1/2">
+
+                <span class="text-blue-600 font-bold tracking-wider text-sm">
+
+                    FEATURE 03
+
+                </span>
+
+
+                <h3 class="text-2xl font-bold mt-2 mb-4">
+
+                    つまずいたら、
+                    現役阪大生に直接LINEで質問
+
+                </h3>
+
+
+                <p class="text-gray-600 leading-relaxed">
+
+                    ここがただのキットとの最大の違いです。
+                    どうしても動かない時は、
+                    公式LINEでいつでも質問可能。
+                    開発者である国立大学の理系学生が、
+                    お子様の「なぜ？」に直接答えます。
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================
+         4. CTA
+    ========================== -->
+
+    <section id="buy"
+        class="bg-gray-900 text-white py-16 text-center px-4">
+
+        <h2 class="text-3xl font-bold mb-6">
+
+            まずは3ヶ月、
+            お子様の変化を見てみませんか？
+
+        </h2>
+
+
+        <p class="mb-8 text-gray-300">
+
+            初期キット＋3ヶ月分のカリキュラム。
+            先着5名様限定のベータ版テスト販売中。
+
+        </p>
+
+
+        <a href="#apply"
+            class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-12 rounded-full shadow-xl transition transform hover:scale-105">
+
+            教材を購入する
+
+        </a>
+
+    </section>
+
+
+</body>
+
+</html>
