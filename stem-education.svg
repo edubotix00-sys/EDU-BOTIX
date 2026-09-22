@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">STEM教育</title>
+  <desc id="desc">科学、技術、工学、数学がものづくりにつながることを表した図</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0c174a"/>
+      <stop offset="1" stop-color="#182879"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" rx="36" fill="url(#bg)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-width="2">
+    <path d="M0 150h1200M0 300h1200M0 450h1200M0 600h1200M0 750h1200"/>
+    <path d="M150 0v900M300 0v900M450 0v900M600 0v900M750 0v900M900 0v900M1050 0v900"/>
+  </g>
+  <text x="600" y="115" fill="#fff" font-family="Arial, 'Noto Sans JP', sans-serif" font-size="70" font-weight="800" text-anchor="middle" letter-spacing="8">STEM EDUCATION</text>
+  <text x="600" y="168" fill="#dce5ff" font-family="'Noto Sans JP', sans-serif" font-size="28" text-anchor="middle" letter-spacing="5">学びが、ものづくりにつながる</text>
+  <g font-family="Arial, 'Noto Sans JP', sans-serif" text-anchor="middle">
+    <g transform="translate(120 245)">
+      <rect width="215" height="300" rx="28" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".2"/>
+      <circle cx="108" cy="90" r="54" fill="#c1121f"/>
+      <path d="M86 55h44M99 55v48l-27 47h72l-27-47V55" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="94" cy="127" r="6" fill="#fff"/><circle cx="119" cy="139" r="8" fill="#fff"/>
+      <text x="108" y="205" fill="#fff" font-size="48" font-weight="800">S</text>
+      <text x="108" y="244" fill="#fff" font-size="21">SCIENCE</text>
+      <text x="108" y="278" fill="#dce5ff" font-size="24">科学</text>
+    </g>
+    <g transform="translate(370 245)">
+      <rect width="215" height="300" rx="28" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".2"/>
+      <circle cx="108" cy="90" r="54" fill="#2374d8"/>
+      <rect x="72" y="54" width="72" height="72" rx="10" fill="none" stroke="#fff" stroke-width="9"/>
+      <g stroke="#fff" stroke-width="6"><path d="M83 40v14M108 40v14M133 40v14M83 126v14M108 126v14M133 126v14M58 66h14M58 90h14M58 114h14M144 66h14M144 90h14M144 114h14"/></g>
+      <text x="108" y="205" fill="#fff" font-size="48" font-weight="800">T</text>
+      <text x="108" y="244" fill="#fff" font-size="21">TECHNOLOGY</text>
+      <text x="108" y="278" fill="#dce5ff" font-size="24">技術</text>
+    </g>
+    <g transform="translate(620 245)">
+      <rect width="215" height="300" rx="28" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".2"/>
+      <circle cx="108" cy="90" r="54" fill="#ef8b18"/>
+      <path d="M68 128l26-36 19 18 34-50M72 128h72M82 128V75M134 128V60" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="108" y="205" fill="#fff" font-size="48" font-weight="800">E</text>
+      <text x="108" y="244" fill="#fff" font-size="21">ENGINEERING</text>
+      <text x="108" y="278" fill="#dce5ff" font-size="24">工学</text>
+    </g>
+    <g transform="translate(870 245)">
+      <rect width="215" height="300" rx="28" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-opacity=".2"/>
+      <circle cx="108" cy="90" r="54" fill="#18a36b"/>
+      <text x="108" y="111" fill="#fff" font-family="Georgia, serif" font-size="68" font-weight="700">π</text>
+      <text x="108" y="205" fill="#fff" font-size="48" font-weight="800">M</text>
+      <text x="108" y="244" fill="#fff" font-size="21">MATHEMATICS</text>
+      <text x="108" y="278" fill="#dce5ff" font-size="24">数学</text>
+    </g>
+  </g>
+  <g transform="translate(600 680)" filter="url(#glow)">
+    <circle r="86" fill="#fff" fill-opacity=".08" stroke="#fff" stroke-width="3"/>
+    <path d="M-56 12h35l18-30 29 54 18-24h48" fill="none" stroke="#ff4050" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-56" cy="12" r="9" fill="#fff"/><circle cx="92" cy="12" r="9" fill="#fff"/>
+  </g>
+  <g fill="none" stroke="#fff" stroke-opacity=".48" stroke-width="4">
+    <path d="M228 560C260 640 395 665 507 675"/>
+    <path d="M478 560C500 620 535 650 565 670"/>
+    <path d="M728 560C700 620 665 650 635 670"/>
+    <path d="M978 560C940 640 805 665 693 675"/>
+  </g>
+  <text x="600" y="825" fill="#fff" font-family="Arial, sans-serif" font-size="44" font-weight="800" text-anchor="middle" letter-spacing="8">EDU-BOTIX</text>
+</svg>
