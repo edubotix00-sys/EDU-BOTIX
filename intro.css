@@ -5,8 +5,9 @@ body.spark-home { overflow-x: clip; }
 #spark-canvas { display: block; width: 100%; height: 100%; }
 .spark-story { position: relative; z-index: 1; height: 480vh; height: 480svh; text-align: center; }
 .spark-panel { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 64px 24px 76px; overflow: hidden; }
-.spark-copy { display: flex; flex-direction: column; align-items: center; justify-content: center; width: min(920px, 100%); }
-.spark-intro .spark-line { max-width: 850px; margin: 7px 0; opacity: 0; transform: translateY(16px); color: #fff; font-size: clamp(.95rem, 2.4vw, 1.35rem); font-weight: 300; line-height: 1.65; letter-spacing: .12em; text-align: center; text-shadow: 0 0 16px #639fff88; overflow-wrap: anywhere; transition: opacity .45s ease, transform .45s ease; }
+.spark-copy { display: block; flex: 0 0 auto; width: min(920px, 100%); transform: scale(var(--spark-copy-scale, 1)); transform-origin: center; }
+.spark-copy > .spark-line { position: static; inset: auto; display: block; width: 100%; height: auto; }
+.spark-intro .spark-line { max-width: 850px; margin: 7px auto; opacity: 0; transform: none; color: #fff; font-size: clamp(.95rem, 2.4vw, 1.35rem); font-weight: 300; line-height: 1.65; letter-spacing: .12em; text-align: center; text-shadow: 0 0 16px #639fff88; overflow-wrap: anywhere; transition: opacity .45s ease, transform .45s ease; }
 .spark-intro .spark-line.is-visible { opacity: 1; transform: translateY(0); }
 .spark-intro .spark-title { font-family: 'Helvetica Neue', sans-serif; font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 800; color: #0c254a; -webkit-text-stroke: 1px #ffffffcc; letter-spacing: .12em; text-shadow: 0 0 30px #639fffbb; }
 .spark-intro .spark-subtitle { font-size: .85rem; color: #cce0ff; letter-spacing: .08em; }
@@ -14,12 +15,12 @@ body.spark-home { overflow-x: clip; }
 .spark-intro.is-complete .spark-scroll { opacity: 0; }
 .spark-skip-wrap { position: sticky; top: 20px; z-index: 3; height: 0; display: flex; justify-content: flex-start; padding-left: 20px; }
 .spark-skip, .spark-enter { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px; border: 1px solid #7eabec88; border-radius: 99px; color: #fff; background: #081426; text-decoration: none; font-size: .85rem; }
-.spark-enter { margin-top: 18px; padding: 14px 30px; opacity: 0; transform: translateY(12px); pointer-events: none; background: #153866; transition: opacity .45s ease, transform .45s ease, background-color .2s ease; }
+.spark-enter { margin-top: 18px; padding: 14px 30px; opacity: 0; transform: none; pointer-events: none; background: #153866; transition: opacity .45s ease, transform .45s ease, background-color .2s ease; }
 .spark-intro.is-complete .spark-enter { opacity: 1; transform: translateY(0); pointer-events: auto; }
 .spark-intro a:hover { background-color: #214674; }
 .spark-intro a:focus-visible { outline: 3px solid #cce0ff; outline-offset: 5px; }
 /* Keep the existing fixed menu visible over both dark and light backgrounds. */
 body.spark-home .hamburger { background: #ffffffed; box-shadow: 0 0 0 9px #ffffffed; border-radius: 3px; }
 #site-home { scroll-margin-top: 0; }
-@media (max-width: 600px) { .spark-panel { padding: 52px 20px 68px; } .spark-intro .spark-line { margin: 5px 0; font-size: clamp(.82rem, 3.6vw, 1rem); line-height: 1.55; letter-spacing: .045em; } .spark-intro .spark-title { margin-top: 12px; font-size: clamp(2rem, 11vw, 3rem); } .spark-subtitle { display: none; } .spark-enter { margin-top: 12px; padding: 11px 22px; } }
+@media (max-width: 600px) { .spark-panel { padding: 52px 20px 68px; } .spark-intro .spark-line { margin: 5px auto; font-size: clamp(.82rem, 3.6vw, 1rem); line-height: 1.55; letter-spacing: .045em; } .spark-intro .spark-title { margin-top: 12px; font-size: clamp(2rem, 11vw, 3rem); } .spark-subtitle { display: none; } .spark-enter { margin-top: 12px; padding: 11px 22px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .spark-intro .spark-line, .spark-enter { transition: none; } }

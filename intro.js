@@ -15,7 +15,21 @@
       target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth' });
     });
   });
-  const story = intro.querySelector('.spark-story');
+  const panel = intro.querySelector('.spark-panel');
+  const copy = intro.querySelector('.spark-copy');
+  function fitStory() {
+    const style = getComputedStyle(panel);
+    const available = panel.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+    copy.style.setProperty('--spark-copy-scale', Math.min(1, Math.max(1, available) / Math.max(1, copy.offsetHeight)));
+    requestStoryUpdate();
+  }
+  if ('ResizeObserver' in window) {
+    const layoutObserver = new ResizeObserver(fitStory);
+    layoutObserver.observe(panel);
+    layoutObserver.observe(copy);
+  }
+  window.addEventListener('resize', fitStory, { passive: true });
+  if (document.fonts) document.fonts.ready.then(fitStory);
   const lines = [...intro.querySelectorAll('.spark-line')];
   let scrollTicking = false;
   function updateStory() {
@@ -124,7 +138,7 @@
       }
     });
     for (const p of particles) {
-      ctx.globalAlpha = Math.min(1, p.light * .84 + .2);
+      ctx.globalAlpha = Math.min(1, p.light * .84 + .27);
       const size = (p.radius + p.light * 3) * 6;
       ctx.drawImage(sprite, p.x - size / 2, p.y - size / 2, size, size);
     }
@@ -172,5 +186,6 @@
   else window.addEventListener('resize', resize, { passive: true });
   resize();
   checkVisibility();
+  fitStory();
   updateStory();
 })();
