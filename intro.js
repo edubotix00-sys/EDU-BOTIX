@@ -84,7 +84,7 @@
       if (p.y < 0 || p.y >= height) { p.vy *= -1; p.y = Math.max(0, Math.min(height - .01, p.y)); }
       const dx = pointer.x - p.x, dy = pointer.y - p.y;
       const squared = dx * dx + dy * dy;
-      p.light = squared < 40000 ? 1 - Math.sqrt(squared) / 200 : .02;
+      p.light = squared < 40000 ? 1 - Math.sqrt(squared) / 200 : .04;
       p.cellX = Math.floor(p.x / cellSize);
       p.cellY = Math.floor(p.y / cellSize);
       grid[p.cellY * columns + p.cellX].push(i);
@@ -113,7 +113,7 @@
       }
     });
     for (const p of particles) {
-      ctx.globalAlpha = p.light * .8 + .1;
+      ctx.globalAlpha = Math.min(1, p.light * .82 + .16);
       const size = (p.radius + p.light * 3) * 6;
       ctx.drawImage(sprite, p.x - size / 2, p.y - size / 2, size, size);
     }
