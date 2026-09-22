@@ -1,0 +1,24 @@
+/* The Spark: scoped to the opening story; the existing site follows in normal flow. */
+body.spark-home { overflow-x: clip; }
+.spark-intro { position: relative; isolation: isolate; background: #000; color: #fff; }
+.spark-stage { position: sticky; top: 0; height: 100vh; height: 100svh; margin-bottom: -100vh; margin-bottom: -100svh; overflow: hidden; pointer-events: none; background: radial-gradient(ellipse at center, #071222 0%, #000 70%); }
+#spark-canvas { display: block; width: 100%; height: 100%; }
+.spark-story { position: relative; z-index: 1; text-align: center; }
+.spark-panel { position: relative; min-height: 80vh; min-height: 80svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 24px; }
+.spark-panel:first-child, .spark-panel:last-child { min-height: 100vh; min-height: 100svh; }
+.spark-intro .spark-line { max-width: 850px; margin: 15px 0; color: #fff; font-size: clamp(1.05rem, 3.4vw, 1.5rem); font-weight: 300; line-height: 1.9; letter-spacing: .14em; text-align: center; text-shadow: 0 0 16px #639fff88; overflow-wrap: anywhere; }
+.spark-intro .spark-title { font-family: 'Helvetica Neue', sans-serif; font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 800; color: #0c254a; -webkit-text-stroke: 1px #ffffffcc; letter-spacing: .12em; text-shadow: 0 0 30px #639fffbb; }
+.spark-intro .spark-subtitle { font-size: .85rem; color: #cce0ff; letter-spacing: .08em; }
+.spark-scroll { position: absolute; bottom: 7vh; color: #cce0ff; font-size: .8rem; letter-spacing: .15em; text-decoration: none; padding: 12px; }
+.spark-skip-wrap { position: sticky; top: 20px; z-index: 3; height: 0; display: flex; justify-content: flex-start; padding-left: 20px; }
+.spark-skip, .spark-enter { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 20px; border: 1px solid #7eabec88; border-radius: 99px; color: #fff; background: #081426; text-decoration: none; font-size: .85rem; }
+.spark-enter { margin-top: 30px; padding: 14px 30px; background: #153866; }
+.spark-intro a:hover { background-color: #214674; }
+.spark-intro a:focus-visible { outline: 3px solid #cce0ff; outline-offset: 5px; }
+.spark-reveal { animation: spark-reveal 1s ease-out both; }
+@keyframes spark-reveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+/* Keep the existing fixed menu visible over both dark and light backgrounds. */
+body.spark-home .hamburger { background: #ffffffed; box-shadow: 0 0 0 9px #ffffffed; border-radius: 3px; }
+#site-home { scroll-margin-top: 0; }
+@media (max-width: 600px) { .spark-panel { padding-inline: 22px; } .spark-intro .spark-line { letter-spacing: .07em; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .spark-reveal { animation: none; } }
