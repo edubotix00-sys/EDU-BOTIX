@@ -15,16 +15,27 @@
       target.scrollIntoView({ behavior: reduced.matches ? 'instant' : 'smooth' });
     });
   });
-  if ('IntersectionObserver' in window) {
-    const reveal = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        if (!reduced.matches) entry.target.classList.add('spark-reveal');
-        reveal.unobserve(entry.target);
-      });
-    }, { threshold: 0.4 });
-    intro.querySelectorAll('.spark-line').forEach(line => reveal.observe(line));
+  const story = intro.querySelector('.spark-story');
+  const lines = [...intro.querySelectorAll('.spark-line')];
+  let scrollTicking = false;
+  function updateStory() {
+    scrollTicking = false;
+    const rect = intro.getBoundingClientRect();
+    const distance = Math.max(1, intro.offsetHeight - innerHeight);
+    const progress = Math.max(0, Math.min(1, -rect.top / distance));
+    // All copy is visible by 72%; the remaining scroll holds the full message.
+    lines.forEach((line, index) => {
+      const threshold = .04 + index * (.68 / Math.max(1, lines.length - 1));
+      line.classList.toggle('is-visible', progress >= threshold);
+    });
+    intro.classList.toggle('is-complete', progress >= .72);
   }
+  function requestStoryUpdate() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(updateStory);
+  }
+  window.addEventListener('scroll', requestStoryUpdate, { passive: true });
 
   const canvas = document.getElementById('spark-canvas');
   const ctx = canvas.getContext('2d', { alpha: false });
@@ -84,7 +95,7 @@
       if (p.y < 0 || p.y >= height) { p.vy *= -1; p.y = Math.max(0, Math.min(height - .01, p.y)); }
       const dx = pointer.x - p.x, dy = pointer.y - p.y;
       const squared = dx * dx + dy * dy;
-      p.light = squared < 40000 ? 1 - Math.sqrt(squared) / 200 : .04;
+      p.light = squared < 40000 ? 1 - Math.sqrt(squared) / 200 : .055;
       p.cellX = Math.floor(p.x / cellSize);
       p.cellY = Math.floor(p.y / cellSize);
       grid[p.cellY * columns + p.cellX].push(i);
@@ -113,7 +124,7 @@
       }
     });
     for (const p of particles) {
-      ctx.globalAlpha = Math.min(1, p.light * .82 + .16);
+      ctx.globalAlpha = Math.min(1, p.light * .84 + .2);
       const size = (p.radius + p.light * 3) * 6;
       ctx.drawImage(sprite, p.x - size / 2, p.y - size / 2, size, size);
     }
@@ -161,4 +172,5 @@
   else window.addEventListener('resize', resize, { passive: true });
   resize();
   checkVisibility();
+  updateStory();
 })();
